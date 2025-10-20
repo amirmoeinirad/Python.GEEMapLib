@@ -34,11 +34,11 @@ import socks
 
 # A file containing your Google Service Account credentials.
 # You must download your own from the Google Cloud Console > Service Accounts section.
-key_file = "my-project-1577403632740-67540b7ca3a5.json"
+key_file = "your-file.json"
 
 # Your Google Service Account email
 # It's available in your Google Cloud Console > Service Accounts section.
-service_account = "my-service-account-for-gee@my-project-1577403632740.iam.gserviceaccount.com"
+service_account = "your-project@my-project-id.iam.gserviceaccount.com"
 
 # Your complete Service Account credentials
 credentials = ee.ServiceAccountCredentials(service_account, key_file)

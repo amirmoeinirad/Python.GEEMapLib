@@ -80,7 +80,7 @@ print("GEEMap Library Version: " + geemap.__version__)
 
 
 # This line connects the Python environment to your Google Earth Engine account.
-ee.Initialize(credentials, project='my-project-1577403632740', http_transport=http_transport)
+ee.Initialize(credentials, project='my-project-ID', http_transport=http_transport)
 print("\nConnected successfully to Google Earth Engine (GEE) using the Google Service Account.")
 
 

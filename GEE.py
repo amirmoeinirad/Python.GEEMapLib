@@ -36,11 +36,11 @@ import socks
 
 # A file containing your Google Service Account credentials.
 # You must download your own from the Google Cloud Console > Service Accounts section.
-key_file = "my-project-1577403632740-67540b7ca3a5.json"
+key_file = "your-file.json"
 
 # Your Google Service Account email
 # It's available in your Google Cloud Console > Service Accounts section.
-service_account = "my-service-account-for-gee@my-project-1577403632740.iam.gserviceaccount.com"
+service_account = "your-sevrice-account-email"
 
 # Your complete Service Account credentials
 credentials = ee.ServiceAccountCredentials(service_account, key_file)
@@ -83,7 +83,7 @@ print("GEEMap Library Version: " + geemap.__version__)
 
 # initialize the GEE API
 # This line connects the Python environment to your Google Earth Engine account.
-ee.Initialize(credentials, project='my-project-1577403632740', http_transport=http_transport)
+ee.Initialize(credentials, project='your-project-ID', http_transport=http_transport)
 print("\nConnected successfully to Google Earth Engine (GEE) using the Google Service Account.")
 
 

@@ -17,6 +17,8 @@ import ee
 # A Python library that acts as a bridge between Google Earth Engine and Python.
 # It works on top of 'ee' and provides visualization capabilities.
 import geemap
+# Make sure that 'geemap' and 'earthengine-api' versions are compatible.
+# -->> The version that works for me: earthengine-api=1.0.0 & gemap=0.3.0 <<--
 
 # > pip install httplib2
 # A Python HTTP client library that handles various HTTP features like caching, authentication, and redirects.
@@ -34,11 +36,11 @@ import socks
 
 # A file containing your Google Service Account credentials.
 # You must download your own from the Google Cloud Console > Service Accounts section.
-key_file = "your-file.json"
+key_file = "my-project-1577403632740-67540b7ca3a5.json"
 
 # Your Google Service Account email
 # It's available in your Google Cloud Console > Service Accounts section.
-service_account = "your-project@my-project-id.iam.gserviceaccount.com"
+service_account = "my-service-account-for-gee@my-project-1577403632740.iam.gserviceaccount.com"
 
 # Your complete Service Account credentials
 credentials = ee.ServiceAccountCredentials(service_account, key_file)
@@ -51,7 +53,7 @@ credentials = ee.ServiceAccountCredentials(service_account, key_file)
 
 # You must set the following options if you are using a proxy on your network.
 PROXY_HOST = "127.0.0.1"              # The hostname or IP
-PROXY_PORT = 52488                    # The port number
+PROXY_PORT = 50347                    # The port number
 PROXY_TYPE = socks.PROXY_TYPE_HTTP   # Most corporate proxies are HTTP or SOCKS5
 
 proxy_info = ProxyInfo(
@@ -79,9 +81,16 @@ print("GEEMap Library Version: " + geemap.__version__)
 # ee.Authenticate()
 
 
+# initialize the GEE API
 # This line connects the Python environment to your Google Earth Engine account.
-ee.Initialize(credentials, project='my-project-ID', http_transport=http_transport)
+ee.Initialize(credentials, project='my-project-1577403632740', http_transport=http_transport)
 print("\nConnected successfully to Google Earth Engine (GEE) using the Google Service Account.")
+
+
+# Initialize the map
+# Create an interactive map centered on Tehran
+Map = geemap.Map(center=[35.6892, 51.3890], zoom=8)
+print("\nMap initialized successfully.")
 
 
 print("\nDone")
